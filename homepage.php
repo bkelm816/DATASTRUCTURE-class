@@ -88,7 +88,7 @@
                                     <br>
 
 
-                                    <h1>Welcome Back to Bank of DS <?php $first + " " + $last ?>!</h1>
+                                    <h1>Welcome Back to Bank of DS <?php $first ?>!</h1>
 
                                     <br> <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
 
