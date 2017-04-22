@@ -119,11 +119,11 @@
 
                 //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
               ?>
-              <form action="accounts.php" method="post">
+              <form class = "text-center" action="accounts.php" method="post">
 
 
 
-              <table border="0" cellspacing="10">
+              <table class="center-block" border="0" cellspacing="10">
               <tr>
               <td>Name: </td> <td><?php echo $user?></td>
               </tr>
