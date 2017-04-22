@@ -22,6 +22,7 @@
     <?php // Example 26-4: index.php
       require_once 'header.php';
       require_once 'db_connect.php';
+      ob_start();
       if (!$loggedin) die("You must be <a href='signin.php'>" .
                 "logged in</a> to view this page")
     ?>
@@ -102,7 +103,7 @@
 
               $querys = "SELECT DISTINCT A.id, type, balance, first, last FROM DATABASE_USERS U, DATABASE_ACCOUNT A where U.userid=A.userid AND U.userid='$user'";
               $results = queryMysql($querys);
-
+              header('Location: accounts.php');
               //      l$id= $row["id"];
               //      $rows = mysqli_fetch_assoc($result);
               //      echo "Hello " .$rows["first"]. " ".$rows["last"]."<br>";
@@ -118,11 +119,9 @@
 
                 //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
               ?>
-              <form action="homepage.php" method="post">
+              <form action="accounts.php" method="post">
 
-              <?php
 
-                //while ($rows = $results->fetch_assoc()) {?>
 
               <table border="0" cellspacing="10">
               <tr>
@@ -155,7 +154,7 @@
 
             </form name="myform">
               <?php
-                header('Location: homepage.php');
+
                 if(isset($_POST['Submit'])){//if the submit button is clicked
 
                 $startBal = $_POST['updatebalance'];
@@ -164,10 +163,10 @@
                 $query="INSERT INTO DATABASE_ACCOUNT (balance,userid,type)VALUES ('$startBal','$user','$type')";
                 //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
                 $updated = queryMysql($query) or die("Cannot update");//update or error
+                header('Location: accounts.php');
 
 
                 }
-                //header('Location: homepage.php');
               ?>
 
 
