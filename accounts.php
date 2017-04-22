@@ -112,7 +112,7 @@
 
                 while($rows = mysqli_fetch_assoc($results)) {
 
-                    echo "<div class = 'center-align text-success'>You have $" . $rows["balance"]. " In your " .$rows["type"]. " account. This account ID is " .$rows["id"]. " - Name: " .$user. "<br> </div>";
+                    echo "<div class = 'middle text-success'>You have $" . $rows["balance"]. " In your " .$rows["type"]. " account. This account ID is " .$rows["id"]. " - Name: " .$user. "<br> </div>";
                   //  $x[5] = $rows["id"];
                 }
               //  $sql = "UPDATE DATABASE_ACCOUNT A SET A.balance = A.balance + $newBal WHERE A.id=6";
