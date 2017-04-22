@@ -125,7 +125,7 @@
 
               <table class="middle" border="0" cellspacing="10">
               <tr>
-              <td>Name: </td> <td><?php echo $user?></td>
+              <td>Name: </td> <td class = "red"><?php echo $user?></td>
               </tr>
               <tr>
               <td>Please enter the type of account you wish to add: </td>
