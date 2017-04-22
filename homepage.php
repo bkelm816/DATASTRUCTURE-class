@@ -46,7 +46,7 @@
                 </li>
 
                 <li>
-                    <a href="accounts.php">accounts</a>
+                    <a href="accounts.php">add account</a>
                 </li>
                 <li>
                     <a href="create.php">create account</a>
@@ -112,13 +112,13 @@
                 while($rows = mysqli_fetch_assoc($results)) {
 
                     echo "<div class = 'center-align text-success'>You have $" . $rows["balance"]. " In your " .$rows["type"]. " account. This account ID is " .$rows["id"]. " - Name: " .$user. "<br> </div>";
-
+                  //  $x[5] = $rows["id"];
                 }
               //  $sql = "UPDATE DATABASE_ACCOUNT A SET A.balance = A.balance + $newBal WHERE A.id=6";
 
                 //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
               ?>
-              <form action="homepage.php" method="post">
+              <form action="homepage.php" method="post" onsumbit= "return validateFrom()">
 
               <?php
 
@@ -143,13 +143,14 @@
               </table>
 
 
-              </form>
+            </form name="myform">
               <?php
 
               	if(isset($_POST['Submit'])){//if the submit button is clicked
 
               	$newBal = $_POST['updatebalance'];
                 $id = $_POST['updateid'];
+
               	$query="UPDATE DATABASE_ACCOUNT A SET A.balance = A.balance + '$newBal' where A.id= '$id'";
               	//$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
               	$updated = queryMysql($query) or die("Cannot update");//update or error
@@ -168,6 +169,16 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery Version 1.11.1 -->
+    <script>
+    function validateForm() {
+
+    var x = document.forms["myform"]["updateid"].value;
+    if (x == "") {
+        alert("ID must be one of the ones above.");
+        return false;
+    }
+}
+</script>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
        <script>
