@@ -20,6 +20,8 @@
 
 .middle{
   margin:auto;
+  width:60%;
+  
 }
 #sidebar-wrapper {
     z-index: 1000;
