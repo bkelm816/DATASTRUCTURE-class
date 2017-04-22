@@ -79,15 +79,16 @@ _END;
   echo "<br><br>";
 
   echo "<div class='main'><h3>Please enter a username and password to sign up!</h3>";
-  $error = $userid = $password = "";
+  $error = $first = $last = $userid = $password = "";
   if (isset($_SESSION['userid'])) destroySession();
 
   if (isset($_POST['userid']))
   {
     $userid = sanitizeString($_POST['userid']);
     $password = sanitizeString($_POST['password']);
-
-    if ($userid == "" || $password == "")
+    $first = sanitizeString($_POST['first']);
+    $last = sanitizeString($_POST['last']);
+    if ($userid == "" || $password == "" || $first == "" || $last == "")
       $error = "Not all fields were entered<br><br>";
     else
     {
@@ -118,7 +119,11 @@ _END;
     <span class='fieldname'>Password</span>
     <input type='password' maxlength='16' name='password'
       value='$password' autocomplete='off'><br>
+
+      <span class='fieldname'>First name</span>
       <input type='text'name='firstname' value='$first'><br>
+
+      <span class='fieldname'>Last name</span>
       <input type='text'name='lastname' value='$last'><br>
 _END;
 ?>
