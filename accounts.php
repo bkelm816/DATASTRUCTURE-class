@@ -160,12 +160,10 @@
 
                 $startBal = $_POST['updatebalance'];
                 $type = $_POST['updateaccount'];
-                  if ($type != null)
-                  {
-                      $query="INSERT INTO DATABASE_ACCOUNT (balance,userid,type)VALUES ('$startBal','$user','$type')";
+                $query="INSERT INTO DATABASE_ACCOUNT (balance,userid,type)VALUES ('$startBal','$user','$type')";
                       //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
-                      $updated = queryMysql($query) or die("Cannot update");//update or error
-                  }
+                $updated = queryMysql($query) or die("Cannot update");//update or error
+
                 header('Location: accounts.php');
                 }
               ?>
