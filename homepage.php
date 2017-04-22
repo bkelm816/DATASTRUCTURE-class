@@ -26,7 +26,7 @@
                 "logged in</a> to view this page")
     ?>
     <?php
-    $queries = "SELECT first, last FROM DATABASE_USERS U DATABASE_ACCOUNT A where U.userid=A.userid AND U.userid='$user'";
+    $queries = "SELECT first, last FROM DATABASE_USERS where userid='$user'";
     $result = queryMysql($queries);
     $row =  mysqli_fetch_assoc($result);
 
