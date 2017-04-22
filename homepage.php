@@ -25,6 +25,12 @@
       if (!$loggedin) die("You must be <a href='signin.php'>" .
                 "logged in</a> to view this page")
     ?>
+    <?php
+    $queries = "SELECT first, last FROM DATABASE_USERS U DATABASE_ACCOUNT A where U.userid=A.userid AND U.userid='$user'";
+    $result = queryMysql($queries);
+    $row =  mysqli_fetch_assoc($result);
+
+    ?>
 
     <div id="wrapper">
         <!-- Sidebar -->
@@ -80,7 +86,7 @@
                                     <br>
 
 
-                                    <h1>Welcome to Bank of DS!</h1>
+                                    <h1>Welcome <?php echo .$row['first']. ?> to Bank of DS!</h1>
 
                                     <br> <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
 
