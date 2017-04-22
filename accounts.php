@@ -95,7 +95,7 @@
 
             <!-- /#page-content-wrapper -->
 
-            <div class = "row">
+            <div class = "text-center row">
 
               <?php //echo getPostcards($connection);
               //echo $user;
@@ -119,7 +119,7 @@
 
                 //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
               ?>
-              <form class = "text-center" action="accounts.php" method="post">
+              <form  action="accounts.php" method="post">
 
 
 
