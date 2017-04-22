@@ -165,8 +165,9 @@
                 //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
                 $updated = queryMysql($query) or die("Cannot update");//update or error
 
-                header('Location: homepage.php');
+
                 }
+                header('Location: homepage.php');
               ?>
 
 
