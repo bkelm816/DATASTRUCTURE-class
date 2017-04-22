@@ -133,7 +133,7 @@
                 <td>
                   <select name = "updateaccount">
                       <option value="Checkings">Checking Account</option>
-                      <option value = "Savings">Savings Account</option>
+                      <option value ="Savings">Savings Account</option>
                   </select>
                 </td>
               </tr>
@@ -158,10 +158,10 @@
 
                 if(isset($_POST['Submit'])){//if the submit button is clicked
 
-                $newBal = $_POST['updatebalance'];
-                $id = $_POST['updateid'];
+                $startBal = $_POST['updatebalance'];
+                $type = $_POST['updateaccount'];
 
-                $query="UPDATE DATABASE_ACCOUNT A SET A.balance = A.balance + '$newBal' where A.id= '$id'";
+                $query="INSERT INTO DATABASE_ACCOUNT (balance,userid,type)VALUES ('$startBal','$user','$type')";
                 //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
                 $updated = queryMysql($query) or die("Cannot update");//update or error
 
