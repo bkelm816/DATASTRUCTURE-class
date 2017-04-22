@@ -118,7 +118,7 @@
 
                 //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
               ?>
-              <form action="homepage.php" method="post" onsumbit= "return validateFrom()">
+              <form action="accounts.php" method="post">
 
               <?php
 
@@ -165,7 +165,7 @@
                 //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
                 $updated = queryMysql($query) or die("Cannot update");//update or error
 
-                header('Location: homepage.php');
+                header('Location: accounts.php');
                 }
               ?>
 
