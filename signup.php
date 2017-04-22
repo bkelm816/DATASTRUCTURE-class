@@ -86,8 +86,7 @@ _END;
   {
     $userid = sanitizeString($_POST['userid']);
     $password = sanitizeString($_POST['password']);
-    $first = sanitizeString($_POST['first']);
-    $last = sanitizeString($_POST['last']);
+  
     if ($userid == "" || $password == "" || $first == "" || $last == "")
       $error = "Not all fields were entered<br><br>";
     else
