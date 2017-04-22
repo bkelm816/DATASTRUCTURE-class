@@ -103,7 +103,7 @@
 
               $querys = "SELECT DISTINCT A.id, type, balance, first, last FROM DATABASE_USERS U, DATABASE_ACCOUNT A where U.userid=A.userid AND U.userid='$user'";
               $results = queryMysql($querys);
-              header('Location: accounts.php');
+              //header('Location: accounts.php');
               //      l$id= $row["id"];
               //      $rows = mysqli_fetch_assoc($result);
               //      echo "Hello " .$rows["first"]. " ".$rows["last"]."<br>";
