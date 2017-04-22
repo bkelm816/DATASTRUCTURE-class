@@ -123,7 +123,7 @@
 
 
 
-              <table class="table text-center" border="0" cellspacing="10">
+              <table class="text-center" border="0" cellspacing="10">
               <tr>
               <td>Name: </td> <td><?php echo $user?></td>
               </tr>
