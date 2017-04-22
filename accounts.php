@@ -95,7 +95,7 @@
 
             <!-- /#page-content-wrapper -->
 
-            <div class = "text-center row">
+            <div class = "center-align row">
 
               <?php //echo getPostcards($connection);
               //echo $user;
