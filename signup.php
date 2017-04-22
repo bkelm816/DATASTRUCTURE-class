@@ -101,7 +101,7 @@ _END;
         $salt2="pg!@";
         $type = "Checkings";
         $password= hash('ripemd128',"$salt1$password$salt2");
-        queryMysql("INSERT INTO DATABASE_USERS (userid, password) VALUES('$userid', '$password')");
+        queryMysql("INSERT INTO DATABASE_USERS (userid, password, first, last) VALUES('$userid', '$password','$first', '$last')");
         queryMysql("INSERT INTO DATABASE_ACCOUNT (balance, userid, type) VALUES(0,'$userid', '$type')");
 
         die("<h4>Account created, you now have a checking account at Bank of DS!</h4>Please <a href='signin.php'>" .
@@ -116,8 +116,10 @@ _END;
     <input type='text' maxlength='16' name='userid' value='$userid'
       onkeyup='checkUser(this)' autocomplete='off'><span id='info'></span><br>
     <span class='fieldname'>Password</span>
-    <input type='text' maxlength='16' name='password'
+    <input type='password' maxlength='16' name='password'
       value='$password' autocomplete='off'><br>
+      <input type='text'name='firstname' value='$first'><br>
+      <input type='text'name='lastname' value='$last'><br>
 _END;
 ?>
 
