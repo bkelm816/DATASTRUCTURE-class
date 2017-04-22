@@ -132,7 +132,6 @@
               <td>Please enter the type of account you wish to add: </td>
                 <td>
                   <select name = "updateaccount">
-                      <option selected disabled hidden style='display: none' value=''></option>
                       <option value="Checkings">Checking Account</option>
                       <option value ="Savings">Savings Account</option>
                   </select>
