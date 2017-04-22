@@ -18,6 +18,9 @@
     padding-left: 250px;
 }
 
+.middle{
+  margin:auto;
+}
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
