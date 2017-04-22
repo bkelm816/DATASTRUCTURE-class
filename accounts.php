@@ -97,27 +97,18 @@
 
             <div class = "row">
 
-              <?php //echo getPostcards($connection);
-              //echo $user;
+              <?php
               $newBal = 7;
 
               $querys = "SELECT DISTINCT A.id, type, balance, first, last FROM DATABASE_USERS U, DATABASE_ACCOUNT A where U.userid=A.userid AND U.userid='$user'";
               $results = queryMysql($querys);
-              //header('Location: accounts.php');
-              //      l$id= $row["id"];
-              //      $rows = mysqli_fetch_assoc($result);
-              //      echo "Hello " .$rows["first"]. " ".$rows["last"]."<br>";
-
-                //echo "Hello " .$row["first"]. " ".$row["last"]."<br><br>";
 
                 while($rows = mysqli_fetch_assoc($results)) {
 
                     echo "<div class = 'middle text-success'>You have $" . $rows["balance"]. " In your " .$rows["type"]. " account. This account ID is " .$rows["id"]. " - Name: " .$user. "<br> </div>";
-                  //  $x[5] = $rows["id"];
-                }
-              //  $sql = "UPDATE DATABASE_ACCOUNT A SET A.balance = A.balance + $newBal WHERE A.id=6";
 
-                //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
+                }
+
               ?>
               <form  action="accounts.php" method="post">
 
@@ -144,7 +135,6 @@
               </tr>
 
               <tr>
-              <!--<td>Account ID:</td> <td><input type="text" name="updateimg" size="100" value="<?php //echo $rows['id']; ?>"></td>-->
               </tr>
               <tr>
               <td><INPUT TYPE="Submit" VALUE="Add Account" NAME="Submit"></td>
@@ -161,7 +151,6 @@
                 $type = $_POST['updateaccount'];
 
                 $query="INSERT INTO DATABASE_ACCOUNT (balance,userid,type)VALUES ('$startBal','$user','$type')";
-                //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
                 $updated = queryMysql($query) or die("Cannot update");//update or error
                 header('Location: accounts.php');
 

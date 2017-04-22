@@ -29,8 +29,7 @@
     $queries = "SELECT first, last FROM DATABASE_USERS where userid='$user'";
     $result = queryMysql($queries);
     $row =  mysqli_fetch_assoc($result);
-    //$first = $row["first"];
-    //$last =  $row["last"];
+  
 
     ?>
 
@@ -104,33 +103,23 @@
 
             <div class = "row">
 
-              <?php //echo getPostcards($connection);
-              //echo $user;
+              <?php
               $newBal = 7;
 
               $querys = "SELECT DISTINCT A.id, type, balance, first, last FROM DATABASE_USERS U, DATABASE_ACCOUNT A where U.userid=A.userid AND U.userid='$user'";
               $results = queryMysql($querys);
 
-              //      l$id= $row["id"];
-              //      $rows = mysqli_fetch_assoc($result);
-              //      echo "Hello " .$rows["first"]. " ".$rows["last"]."<br>";
-
-                //echo "Hello " .$row["first"]. " ".$row["last"]."<br><br>";
 
                 while($rows = mysqli_fetch_assoc($results)) {
 
                     echo "<div class = 'center-align text-success'>You have $" . $rows["balance"]. " In your " .$rows["type"]. " account. This account ID is " .$rows["id"]. " - Name: " .$user. "<br> </div>";
-                  //  $x[5] = $rows["id"];
-                }
-              //  $sql = "UPDATE DATABASE_ACCOUNT A SET A.balance = A.balance + $newBal WHERE A.id=6";
 
-                //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
+                }
+
               ?>
               <form action="homepage.php" method="post" onsumbit= "return validateFrom()">
 
-              <?php
 
-              	//while ($rows = $results->fetch_assoc()) {?>
 
               <table border="0" cellspacing="10">
               <tr>
@@ -160,7 +149,6 @@
                 $id = $_POST['updateid'];
 
               	$query="UPDATE DATABASE_ACCOUNT A SET A.balance = A.balance + '$newBal' where A.id= '$id'";
-              	//$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
               	$updated = queryMysql($query) or die("Cannot update");//update or error
 
                 header('Location: homepage.php');
