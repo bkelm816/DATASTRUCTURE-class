@@ -95,7 +95,7 @@
 
             <!-- /#page-content-wrapper -->
 
-            <div class = "center-align row">
+            <div class = "row">
 
               <?php //echo getPostcards($connection);
               //echo $user;
@@ -123,7 +123,7 @@
 
 
 
-              <table class="center-block" border="0" cellspacing="10">
+              <table class="table text-center" border="0" cellspacing="10">
               <tr>
               <td>Name: </td> <td><?php echo $user?></td>
               </tr>
