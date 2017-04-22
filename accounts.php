@@ -118,7 +118,7 @@
 
                 //UPDATE values INTO SUM (balance) DATABSE_ACCOUNT
               ?>
-              <form action="accounts.php" method="post">
+              <form action="homepage.php" method="post">
 
               <?php
 
@@ -155,7 +155,7 @@
 
             </form name="myform">
               <?php
-
+                header('Location: homepage.php');
                 if(isset($_POST['Submit'])){//if the submit button is clicked
 
                 $startBal = $_POST['updatebalance'];
@@ -167,7 +167,7 @@
 
 
                 }
-                header('Location: homepage.php');
+                //header('Location: homepage.php');
               ?>
 
 
