@@ -116,7 +116,7 @@ _END;
     <span class='fieldname'>Username</span>
     <input type='text' maxlength='16' name='userid' value='$userid'
       onkeyup='checkUser(this)' autocomplete='off'><span id='info'></span><br>
-    <span class='fieldname'>Password</span>
+    <span class='fieldname'>Password </span>
     <input type='password' maxlength='16' name='password'
       value='$password' autocomplete='off'><br>
 
