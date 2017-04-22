@@ -132,6 +132,7 @@
               <td>Please enter the type of account you wish to add: </td>
                 <td>
                   <select name = "updateaccount">
+                      <option selected disabled hidden style='display: none' value=''></option>
                       <option value="Checkings">Checking Account</option>
                       <option value ="Savings">Savings Account</option>
                   </select>
@@ -160,11 +161,12 @@
 
                 $startBal = $_POST['updatebalance'];
                 $type = $_POST['updateaccount'];
+
                 $query="INSERT INTO DATABASE_ACCOUNT (balance,userid,type)VALUES ('$startBal','$user','$type')";
-                      //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
+                //$query = "UPDATE Books WHERE BookID = '".$bookid."'";//update the database query
                 $updated = queryMysql($query) or die("Cannot update");//update or error
 
-                header('Location: accounts.php');
+                header('Location: homepage.php');
                 }
               ?>
 
