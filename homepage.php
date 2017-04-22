@@ -88,7 +88,7 @@
                                     <br>
 
 
-                                    <h1>Welcome Back to Bank of DS <?php $row['first'] ?>!</h1>
+                                    <h1>Welcome Back to Bank of DS <?php echo $row['first'] " " $row['last'] ?>!</h1>
 
                                     <br> <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
 
