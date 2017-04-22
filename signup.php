@@ -86,7 +86,7 @@ _END;
   {
     $userid = sanitizeString($_POST['userid']);
     $password = sanitizeString($_POST['password']);
-  
+
     if ($userid == "" || $password == "" || $first == "" || $last == "")
       $error = "Not all fields were entered<br><br>";
     else
@@ -101,7 +101,7 @@ _END;
         $salt2="pg!@";
         $type = "Checkings";
         $password= hash('ripemd128',"$salt1$password$salt2");
-        queryMysql("INSERT INTO DATABASE_USERS (userid, password, first, last) VALUES('$userid', '$password','$first', '$last')");
+        queryMysql("INSERT INTO DATABASE_USERS (userid, password, first, last) VALUES('$userid', '$password','Brandon', 'KElm')");
         queryMysql("INSERT INTO DATABASE_ACCOUNT (balance, userid, type) VALUES(0,'$userid', '$type')");
 
         die("<h4>Account created, you now have a checking account at Bank of DS!</h4>Please <a href='signin.php'>" .
