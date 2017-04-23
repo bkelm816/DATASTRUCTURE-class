@@ -29,7 +29,8 @@
     $queries = "SELECT first, last FROM DATABASE_USERS where userid='$user'";
     $result = queryMysql($queries);
     $row =  mysqli_fetch_assoc($result);
-  
+    ob_start();
+
 
     ?>
 
@@ -55,10 +56,10 @@
                 <li>
                     <a href="accounts.php">add account</a>
                 </li>
-                <li>
+                <!--<li>
                     <a href="create.php">create account</a>
                 </li>
-                <!--
+
                 <li>
                     <a href="#">About</a>
                 </li>

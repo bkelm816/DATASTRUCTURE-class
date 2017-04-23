@@ -49,10 +49,11 @@
                 <li>
                     <a href="accounts.php">add account</a>
                 </li>
+                <!--
                 <li>
                     <a href="create.php">create account</a>
                 </li>
-                <!--
+
                 <li>
                     <a href="#">About</a>
                 </li>
